@@ -17,9 +17,6 @@ services:
       - '--path.sysfs=/host/sys'
       - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
     restart: unless-stopped
-    network_mode: host
-    labels:
-      org.label-schema.group: "monitoring"
       
   cadvisor:
     image: google/cadvisor:latest
@@ -35,9 +32,6 @@ services:
     devices:
       - /dev/kmsg
     restart: unless-stopped
-    network_mode: host
-    labels:
-      org.label-schema.group: "monitoring"
       
   nvidia_smi_exporter:
     image: utkuozdemir/nvidia_gpu_exporter:0.3.0
@@ -58,5 +52,5 @@ services:
     image: tribuwana/pushprox:client
     container_name: pushprox-client
     environment:
-      - PROXY_URL=$PROXY_URL
-      - FQDN=$IP_HOST
+      - PROXY_URL=$PROXY
+      - FQDN=$HOST_IP
