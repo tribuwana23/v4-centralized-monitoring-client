@@ -4,4 +4,4 @@ run this command
 ```
 PROXY={prox url} HOST_IP={host ip} docker-compose up -d
 ```
-***dont forget to change value of PROXY and HOST_IP variable***
+***change value of PROXY and HOST_IP variable***
