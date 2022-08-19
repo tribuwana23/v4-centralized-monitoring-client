@@ -52,5 +52,6 @@ services:
     image: tribuwana/pushprox:client
     container_name: pushprox-client
     environment:
-      - PROXY_URL=$PROXY
-      - FQDN=$HOST_IP
+      - PROXY_URL=${PROXY}
+      - FQDN=${HOST_IP}
+    restart: unless-stopped
